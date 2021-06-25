@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Post from '../../molecules/Post/Post';
 import './Posts.sass';
 
@@ -52,22 +52,30 @@ const posts = [
 ];
 
 export default function Posts() {
+  const [posts, setposts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(json => setposts(json));
+  }, []);
+
   return (
     <main className='posts'>
       <Container>
-        {posts.map(post => (
+        {posts.map((post, index) => (
           <Post
-            authorName={post.authorName}
-            authorNameLink={post.authorNameLink}
-            avatar={post.avatar}
-            category={post.category}
-            previewImg={post.previewImg}
-            previewImgAltText={post.previewImgAltText}
-            text={post.text}
-            timeAgo={post.timeAgo}
+            key={index}
+            authorName='John'
+            authorNameLink='google.com'
+            avatar={ava1}
+            category='films'
+            previewImg={laptop}
+            previewImgAltText='laptop'
+            text={post.body}
             title={post.title}
-            postPreviewBackground={post.postPreviewBackground}
-            readMoreLink={post.readMoreLink}
+            postPreviewBackground='linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100% )'
+            readMoreLink='google.com'
           />
         ))}
       </Container>
