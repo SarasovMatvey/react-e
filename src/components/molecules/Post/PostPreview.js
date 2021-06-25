@@ -7,7 +7,7 @@ export default function PostPreview({ img, altText, background }) {
       style={{ background: background || '#BCD1FF' }}
     >
       <img
-        className='post_preview-img'
+        className='post__preview-img'
         src={img}
         alt={altText || 'post peview'}
       />

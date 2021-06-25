@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from '../../atoms/Container/Container';
 import './Post.sass';
 import PostContent from './PostContent';
 import PostPreview from './PostPreview';

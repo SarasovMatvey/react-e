@@ -26,7 +26,7 @@ export default function PostContent({
       <footer className='post__content-footer'>
         <UserLink userName={userName} link={userNameLink} avatar={avatar} />
         <Link to={readMoreLink}>
-          Read more <HiOutlineArrowRight />
+          Read more <HiOutlineArrowRight style={{ marginLeft: '0.3125rem' }} />
         </Link>
       </footer>
     </div>
