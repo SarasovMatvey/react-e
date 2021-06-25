@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from '../../atoms/Container/Container';
 import './Post.sass';
 import PostContent from './PostContent';
 import PostPreview from './PostPreview';
@@ -17,11 +16,13 @@ export default function Post({
   timeAgo,
   postPreviewBackground,
   readMoreLink,
+  previewImgRetina,
 }) {
   return (
     <article className='post'>
       <PostPreview
         img={previewImg}
+        imgRetina={previewImgRetina}
         altText={previewImgAltText}
         background={postPreviewBackground}
       />
